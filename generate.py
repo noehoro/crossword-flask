@@ -463,6 +463,7 @@ class CrosswordCreator():
 def main(structure, words, output=None):
 
     # Generate crossword
+    print(words)
     crossword = Crossword(structure, words)
     creator = CrosswordCreator(crossword)
     assignment = creator.solve()
@@ -470,10 +471,13 @@ def main(structure, words, output=None):
     # Print result
     if assignment is None:
         print("No solution.")
+        return False
     else:
         creator.print(assignment)
         if output:
             creator.save(assignment, output)
+    
+    return True
 
 
 if __name__ == "__main__":

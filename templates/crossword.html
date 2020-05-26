@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block title %}CrossWord{% endblock %} {% block
+content %}
+
+<div class="box shadow-lg rounded">
+  {% if message %}
+  <h1>
+    {{message}}
+  </h1>
+  {% else %}
+  <h1>Here is your Crossword!</h1>
+  <br />
+  <img src="{{url_for('static', filename='answer.png')}}" alt="" />
+  <br />
+  {% endif %}
+  <form action="{{url_for('homepage')}}" method="GET" class="mt-4">
+    <input type="submit" class="button" value="New Crossword" />
+  </form>
+</div>
+{% endblock %}

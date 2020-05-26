@@ -1,22 +1,53 @@
 {% extends 'base.html' %} {% block title %}CrossWord{% endblock %} {% block
 content %}
 
-
-
-<div class="box">
-  <img
-    class="structure"
-    src="{{url_for('static', filename='structures/structure0.png')}}"
-    alt="Structure 0"
-  />
+<div class="left">
+  <form
+    class="box shadow-lg rounded"
+    action="{{url_for('homepage')}}"
+    method="POST"
+  >
+    <h1>Make CrossWord</h1>
+    {{ form.words }} {{ form.structure }} {{
+    form.csrf_token }} {{ form.submit }}
+  </form>
 </div>
 
-<div class="box  mt-4">
-  <img
-    class="structure"
-    src="{{url_for('static', filename='structures/structure2.png')}}"
-    alt="Structure 1"
-  />
+<div class="right">
+  <div class="img-box shadow-lg rounded">
+    <h6>0</h6>
+    <img
+      class="structure"
+      src="{{url_for('static', filename='structures/structure0.png')}}"
+      alt="Structure 0"
+    />
+  </div>
+
+  <div class="img-box shadow-lg rounded">
+    <h6>1</h6>
+    <img
+      class="structure"
+      src="{{url_for('static', filename='structures/structure1.png')}}"
+      alt="Structure 1"
+    />
+  </div>
+
+  <div class="img-box shadow-lg rounded">
+    <h6>2</h6>
+    <img
+      class="structure"
+      src="{{url_for('static', filename='structures/structure2.png')}}"
+      alt="Structure 2"
+    />
+  </div>
+  <div class="img-box shadow-lg rounded">
+    <h6>3</h6>
+    <img
+      class="structure"
+      src="{{url_for('static', filename='structures/structure3.png')}}"
+      alt="Structure 3"
+    />
+  </div>
 </div>
 
 {% endblock %}
