@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block title %}CrossWord{% endblock %} {% block
+content %}
+
+
+
+<div class="box">
+  <img
+    class="structure"
+    src="{{url_for('static', filename='structures/structure0.png')}}"
+    alt="Structure 0"
+  />
+</div>
+
+<div class="box  mt-4">
+  <img
+    class="structure"
+    src="{{url_for('static', filename='structures/structure2.png')}}"
+    alt="Structure 1"
+  />
+</div>
+
+{% endblock %}

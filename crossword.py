@@ -36,9 +36,8 @@ class Variable():
 
 
 class Crossword():
-
-    def __init__(self, structure_file, words_file):
-
+    def __init__(self, structure_file, words):
+        
         # Determine structure of crossword
         with open(structure_file) as f:
             contents = f.read().splitlines()
@@ -58,8 +57,7 @@ class Crossword():
                 self.structure.append(row)
 
         # Save vocabulary list
-        with open(words_file) as f:
-            self.words = set(f.read().upper().splitlines())
+        self.words = words
 
         # Determine variable set
         self.variables = set()
