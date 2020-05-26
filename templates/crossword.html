@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block title %}CrossWord{% endblock %} {% block
 content %}
 
-<div class="box shadow-lg rounded">
+<div class="box shadow-lg rounded" style="width: 70%;">
   {% if message %}
   <h1>
     {{message}}
@@ -9,11 +9,22 @@ content %}
   {% else %}
   <h1>Here is your Crossword!</h1>
   <br />
-  <img src="{{url_for('static', filename='answer.png')}}" alt="" />
+  <div id="img"></div>
   <br />
   {% endif %}
   <form action="{{url_for('homepage')}}" method="GET" class="mt-4">
     <input type="submit" class="button" value="New Crossword" />
   </form>
 </div>
+
+<script>
+  const link = "{{url_for('static', filename='answer.png')}}";
+
+  const container = document.getElementById("img");
+  fetch(link).then((data) => {
+    console.log(data.url);
+    console.log(container);
+    container.innerHTML = `<img style='width:90%'src='${data.url}' />`;
+  });
+</script>
 {% endblock %}

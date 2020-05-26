@@ -23,7 +23,8 @@ h6 {
 }
 .box input[type="text"],
 .box input[type="password"],
-.box select, .box textarea {
+.box select,
+.box textarea {
   border: 0;
   background: none;
   display: block;
@@ -47,7 +48,8 @@ option {
   border-color: #2ecc71;
 }
 .box input[type="submit"],
-.button {
+.button,
+button {
   border: 0;
   background: none;
   display: block;
@@ -62,7 +64,8 @@ option {
   cursor: pointer;
 }
 .box input[type="submit"]:hover,
-.button:hover {
+.button:hover,
+button:hover {
   background: #2ecc71;
 }
 
@@ -84,6 +87,7 @@ img.structure {
   height: 100%;
   width: 70%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -96,3 +100,14 @@ img.structure {
   height: 100%;
   width: 30%;
 }
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  display: inline;
+}
+
