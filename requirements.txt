@@ -5,5 +5,6 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 Pillow==7.1.1
+uuid==1.30
 Werkzeug==1.0.1
 WTForms==2.3.1

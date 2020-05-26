@@ -18,7 +18,9 @@ content %}
 </div>
 
 <script>
-  const link = "{{url_for('static', filename='answer.png')}}";
+  const id = "{{id}}"
+  const link = `/static/${id}.png`;
+
 
   const container = document.getElementById("img");
   fetch(link).then((data) => {
